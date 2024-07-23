@@ -1,0 +1,7 @@
+{
+    "INPUT_FILENAME":"in.csv",
+    "OUTPUT_FILENAME":"out.txt",
+    "IGNORE_UNKNOWN":"true",
+    "IGNORE_REPEATS":"true",
+    "REPEAT_INTERVAL":"0"
+}
