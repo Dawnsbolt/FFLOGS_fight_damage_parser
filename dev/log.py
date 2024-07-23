@@ -24,7 +24,6 @@ class Log:
             self.file.close()
 
     def __iter__(self):
-        next(self.file) # Skip initial ["Time","Event",""] line
         return self
     
     def __next__(self):

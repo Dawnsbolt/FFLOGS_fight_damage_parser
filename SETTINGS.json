@@ -2,6 +2,6 @@
     "INPUT_FILENAME":"in.csv",
     "OUTPUT_FILENAME":"out.txt",
     "IGNORE_UNKNOWN":"true",
-    "IGNORE_REPEATS":"true",
+    "INCLUDE_REPEATS":"false",
     "REPEAT_INTERVAL":"0"
 }
