@@ -6,7 +6,7 @@ b. TO DOWNLOAD CSV LOGS FROM https://www.fflogs.com:
 	Allies > Damage Taken > Events > [DOWNLOAD CSV]
 	*you may have to download multiple CSV files for a log
 [USAGE]
-1. Place CSV files into "inputs" folder
+1. Place CSV files into "inputs" folder. Make sure to remove demo.csv
 2. Run "abilityDamageParser"
 	--output.txt for pasting into spreadsheet
 	--outputs formatted results to command line
