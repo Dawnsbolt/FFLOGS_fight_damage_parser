@@ -32,29 +32,3 @@ class Log:
 class LogFileNotFound(FileNotFoundError):
     def __init__(self, EXPECTED_FILENAME):
         self.expected = EXPECTED_FILENAME
-
-### HELPER METHODS ###
-
-"""
-Splits str separated by , returns list [TIME, EVENT]
-tokens[0] = RAW_TIME
-tokens[1] = RAW_EVENT
-INPUT_LINE is just a string
-"""
-def generate_tokens(input_line):
-    tokens = input_line.split(',')
-    return [tokens[0], str.strip(tokens[1])]
-
-def parse_event_dmg(event_input):
-    print(event_input.split("  "))
-    raw_dmg_string = re.search("U: [0-9]+", event_input)
-    unmitigated_dmg = re.search("\d+", str(raw_dmg_string.group())).group()
-    ability_name = event_input
-    return ability_name, unmitigated_dmg
-    
-def parse_time(time_input):
-    clean_time = time_input.replace("\"", '') #clean timestamp input
-    time_tokens = clean_time.split('.')
-    main_timestamp = time_tokens[0]
-    rounded_sub = str(floor(int(time_tokens[1])/ROUND)) +'00'
-    return main_timestamp + '.' + rounded_sub[0:3]
