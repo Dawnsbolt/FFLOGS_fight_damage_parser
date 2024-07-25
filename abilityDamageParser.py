@@ -1,18 +1,5 @@
 """ 
-Script to convert a CSV of enemy casts into a clean timestring for spreadsheets where each line is of the form:
- TIME \t ABILITYNAME \n
-
-SETTINGS.json contains the following:
-    INPUT_FILENAME [filename]   -   name of the input file
-    OUTPUT_FILENAME [filename]  -   name of the desired output file
-    INCLUDE_REPEATS [True/False] -  includes repeated damage events (ie spread mechanics which resolve simultaneously)
-    IGNORE_UNKNOWN [True/False] -   ignore unknown_* events
-    REPEAT_INTERVAL [int] -         time between repeated events allowed before they are considered to be repeats that should be ignored
-                                    // Useful for ignoring spread mechanics which occur concurrently while allowing repeat raidwides through
-Add event names you want to ignore to BLACKLIST.json
-
-RUNTIME: O(nm) where n := # of unique abilities, and m := # of matched events
-assumes that the # of events which match with "prepares" and events which match "U: [0-9]+, M: [0-9]+" is roughly the same (Boss prepares abilities befores resolving)
+Python 3.x script used to quickly analyze an FFLOGs Damage Taken Event log to find the maximum amount of damage an unmitigated cast would do.
 """
 import os, re, json
 from dev.log import Log, LogFileNotFound
